@@ -1,3 +1,3 @@
-# GitHub-workshop 💻
-Beneficios de GitHub Student Developer Pack 🐙🎁
+# GitHub Workshop
+Beneficios de GitHub para estudiantes 🐙🎁
 https://bit.ly/githubgye23
