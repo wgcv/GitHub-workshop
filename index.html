@@ -28,6 +28,7 @@
             margin: 0 auto;
             margin-top: 150px;
         }
+
         .nes-container {
             margin: 2rem !important;
             border-image-repeat: unset !important;
@@ -40,17 +41,43 @@
         <div class="container">
             <div class="nes-container is-rounded with-title is-centered">
 
-            <img src='./capibara.jpg' height="200px">
+                <img src='./capibara.jpg' height="200px">
             </div>
             <div class="nes-container is-rounded with-title is-centered">
                 <p class="title">Bienvenidos</p>
                 <p>El sitio web del Sr. Capibara</p>
             </div>
 
-            <center><h2>Gracias por asistir por estar en el taller de GitHub Pages:</h1></center>
-
+            <center>
+                <h2>Gracias por asistir por estar en el taller de GitHub Pages:</h1>
+            </center>
+            <div style="display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;" id="assistants">
+                <section class="nes-container is-dark" style="display: flex;
+                padding: 1rem 1.5rem;
+                width: 470px;
+                margin-bottom: 2rem;
+                ">
+                    <div class="avatar"><img data-src="https://github.com/guastallaigor.png?size=80"
+                            alt="Core Member Igor Guastalla" class=""
+                            src="https://github.com/guastallaigor.png?size=80"></div>
+                    <div class="profile" style="margin-left: 1.5rem;">
+                        <h4 class="name">Igor Guastalla</h4>
+                        <p>Development support</p>
+                    </div>
+                </section>
+            </div>
         </div>
     </div>
+    <script>
+        fetch('./data.json')
+    .then((response) => response.json())
+    .then((json) => {
+        console.log(json);
+    });
+
+        </script>
 </body>
 
 </html>
