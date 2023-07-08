@@ -33,6 +33,9 @@
             margin: 2rem !important;
             border-image-repeat: unset !important;
         }
+        a:hover{
+            text-decoration: none;
+        }
     </style>
 </head>
 
@@ -54,27 +57,36 @@
             <div style="display: flex;
             flex-wrap: wrap;
             justify-content: space-between;" id="assistants">
-                <section class="nes-container is-dark" style="display: flex;
-                padding: 1rem 1.5rem;
-                width: 470px;
-                margin-bottom: 2rem;
-                ">
-                    <div class="avatar"><img data-src="https://github.com/guastallaigor.png?size=80"
-                            alt="Core Member Igor Guastalla" class=""
-                            src="https://github.com/guastallaigor.png?size=80"></div>
-                    <div class="profile" style="margin-left: 1.5rem;">
-                        <h4 class="name">Igor Guastalla</h4>
-                        <p>Development support</p>
-                    </div>
-                </section>
+                
             </div>
         </div>
     </div>
     <script>
-        fetch('./data.json')
+        fetch('https://wgcv.github.io/GitHub-workshop/asistentes.json')
     .then((response) => response.json())
     .then((json) => {
-        console.log(json);
+        assistans = document.getElementById("assistants");
+        for(i = 0; i < json.length; i++){
+            section = `
+           <a target="_blank" href="https://github.com/${json[i].user}"> <section class="nes-container is-dark" style="display: flex;
+                padding: 1rem 1.5rem;
+                width: 100%;
+                margin-bottom: 2rem;
+                ">
+                    <div class="avatar"><img data-src="${json[i].avatar}" class=""
+                            src="${json[i].avatar}" style="display: block;width: 80px;height: 80px;border-radius: 50%;"></div>
+                    <div class="profile" style="margin-left: 1.5rem;">
+                        <h4 class="name">${json[i].user}</h4>
+                        <p>${json[i].name}</p>
+                    </div>
+                </section>
+                </a>
+                `;
+
+                assistans.insertAdjacentHTML( 'beforeend', section);
+
+        }
+
     });
 
         </script>
